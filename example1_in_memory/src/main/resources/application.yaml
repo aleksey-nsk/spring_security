@@ -3,8 +3,8 @@ server:
     port: 8081
 
 # Задать своего пользователя в In-Memory аутентификации
-spring:
-    security:
-        user:
-            name: alex
-            password: 123
+#spring:
+#    security:
+#        user:
+#            name: alex
+#            password: 123
