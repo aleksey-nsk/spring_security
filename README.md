@@ -14,3 +14,6 @@ Spring Security создаёт пользователя по умолчанию
 localhost:8081/logout
 **Form-Based аутентификация**.
 **In-Memory аутентификация**
+
+Задать своего пользователя в In-Memory аутентификации можно
+в файле application.yaml
