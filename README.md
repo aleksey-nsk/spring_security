@@ -50,3 +50,10 @@ AuthenticationManagerBuilder настроить AuthenticationManager (кото�
 
 Настроил авторизацию.
 См. на скриншотах.
+![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex1_01_home.png)
+![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex1_02_login.png)
+![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex1_03_user.png)
+![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex1_04_forbidden_403.png)
+![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex1_05_logout.png)
+![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex1_06_login.png)
+![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex1_07_admin.png)
