@@ -13,6 +13,7 @@
     <modules>
         <module>example1_in_memory</module>
         <module>example2_custom_login_form</module>
+        <module>example3_custom_authentication</module>
     </modules>
 
 </project>
