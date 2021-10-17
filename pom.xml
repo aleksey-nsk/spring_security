@@ -12,6 +12,7 @@
 
     <modules>
         <module>example1_in_memory</module>
+        <module>example2_custom_login_form</module>
     </modules>
 
 </project>

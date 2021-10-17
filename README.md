@@ -57,3 +57,9 @@ AuthenticationManagerBuilder настроить AuthenticationManager (кото�
 ![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex1_05_logout.png)
 ![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex1_06_login.png)
 ![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex1_07_admin.png)
+
+- Custom Login Form
+![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex2_01_error.png)
+![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex2_02_hello.png)
+![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex2_03_logout.png)
+![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex2_04_main.png)
