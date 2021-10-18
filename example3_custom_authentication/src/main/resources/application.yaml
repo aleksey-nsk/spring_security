@@ -1,3 +1,13 @@
 # На каком порту стартует приложение
 server:
     port: 8083
+
+# Чтобы на старте приложения таблица создавалась на основе помеченного аннотацией @Entity класса MyUser,
+# а sql-код из data.sql запускался, поставим такие настройки:
+spring:
+    jpa:
+        hibernate:
+            ddl-auto: create
+            show-sql: true
+        datasource:
+            initialization-mode: always
