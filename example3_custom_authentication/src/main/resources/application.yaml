@@ -4,10 +4,29 @@ server:
 
 # Чтобы на старте приложения таблица создавалась на основе помеченного аннотацией @Entity класса MyUser,
 # а sql-код из data.sql запускался, поставим такие настройки:
+#spring:
+#    jpa:
+#        hibernate:
+#            ddl-auto: create
+#            show-sql: true
+#        datasource:
+#            initialization-mode: always
+
+
+# Настройки БД
 spring:
+    datasource:
+        driver-class-name: org.h2.Driver
+        url: jdbc:h2:mem:example3;MODE=PostgreSQL
+        username: sa
+        password:
     jpa:
-        hibernate:
-            ddl-auto: create
-            show-sql: true
-        datasource:
-            initialization-mode: always
+        show-sql: true
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.H2Dialect
+    h2:
+        console:
+            enabled: true # web-консоль по адресу: /h2-console
+            settings:
+                web-allow-others: false
