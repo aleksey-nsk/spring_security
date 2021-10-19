@@ -1,0 +1,28 @@
+# На каком порту стартует приложение
+server:
+    port: 8083
+
+# Настройки логирования
+logging:
+    level:
+        com.spring.example3: debug
+    file:
+        name: example3_custom_authentication/logs/app_debug.log
+
+# Настройки БД
+spring:
+    datasource:
+        driver-class-name: org.h2.Driver
+        url: jdbc:h2:mem:example3;MODE=PostgreSQL
+        username: sa
+        password:
+    jpa:
+        show-sql: false
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.H2Dialect
+    h2:
+        console:
+            enabled: true # web-консоль по адресу: /h2-console
+            settings:
+                web-allow-others: false
