@@ -38,7 +38,9 @@
 ![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex2_04_main.png)
 
 ### Модуль example3_custom_authentication
-- Пользовательская аутентификация в Spring Security
+- **Пользовательская аутентификация** в Spring Security
+- Реализовал пользовательский UserDetailsService - т.е. написал метод
+loadUserByUsername(). По-сути тут всего лишь реализовал извлечение пользователя из БД.
 
 ### Модуль
 

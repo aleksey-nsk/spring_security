@@ -10,15 +10,11 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-//@EnableWebSecurity(debug = true) // Security debugging is enabled
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private CustomUserDetailsService service;
-
-//    @Autowired
-//    private CustomAuthencationProvider provider;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -29,7 +25,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(service);
-//        auth.authenticationProvider(provider);
     }
 
     // Настройка авторизации
