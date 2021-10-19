@@ -37,7 +37,8 @@
 Далее набираю адрес `localhost:8082/login`, ввожу u2/p2 и попадаю на `localhost:8082`:  
 ![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex2_04_main.png)
 
-### Модуль
+### Модуль example3_custom_authentication
+- Пользовательская аутентификация в Spring Security
 
 ### Модуль
 

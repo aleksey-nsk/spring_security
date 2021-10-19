@@ -1,4 +1,4 @@
-package com.spring.example3.security;
+package com.spring.example3.config;
 
 import com.spring.example3.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-@EnableWebSecurity(debug = true)
+//@EnableWebSecurity(debug = true) // Security debugging is enabled
+@EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
@@ -24,12 +25,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return NoOpPasswordEncoder.getInstance();
     }
 
+    // Настройка аутентификации
     @Override
-    public void configure(AuthenticationManagerBuilder auth) throws Exception {
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(service);
 //        auth.authenticationProvider(provider);
     }
 
+    // Настройка авторизации
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()

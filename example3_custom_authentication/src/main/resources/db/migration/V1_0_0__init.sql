@@ -8,5 +8,5 @@ CREATE TABLE my_user
 );
 
 INSERT INTO my_user(username, password, position, role)
-VALUES ('user', 'p1', 'position1', 'USER'),
-       ('admin', 'p2', 'position2', 'ADMIN');
+VALUES ('user', 'p1', 'Финансовый Советник', 'USER'),
+       ('admin', 'p2', 'Начальник Отдела', 'ADMIN');

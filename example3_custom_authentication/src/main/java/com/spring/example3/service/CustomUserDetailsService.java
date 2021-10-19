@@ -2,6 +2,7 @@ package com.spring.example3.service;
 
 import com.spring.example3.model.MyUser;
 import com.spring.example3.repository.MyUserRepository;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@Log4j2
 public class CustomUserDetailsService implements UserDetailsService {
 
     @Autowired
@@ -19,13 +21,11 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        System.out.println("username: " + username);
+        List<MyUser> all = repository.findAll();
+        log.debug("all users in DB: " + all);
 
         MyUser myUser = repository.findByUsername(username);
-        System.out.println("myUser: " + myUser);
-
-        List<MyUser> all = repository.findAll();
-        System.out.println("all: " + all);
+        log.debug("myUser: " + myUser);
 
         if (myUser == null) {
             throw new UsernameNotFoundException("Unknown user: " + username);
