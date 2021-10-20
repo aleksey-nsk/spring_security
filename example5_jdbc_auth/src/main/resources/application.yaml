@@ -23,6 +23,7 @@ spring:
                 dialect: org.hibernate.dialect.H2Dialect
     h2:
         console:
-            enabled: true # web-консоль по адресу: /h2-console
+            enabled: true
+            path: /h2-console # web-консоль
             settings:
                 web-allow-others: false
