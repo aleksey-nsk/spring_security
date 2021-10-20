@@ -15,6 +15,7 @@
         <module>example2_custom_login_form</module>
         <module>example3_custom_authentication</module>
         <module>example4_custom_authentication_provider</module>
+        <module>example5_jdbc_auth</module>
     </modules>
 
 </project>
