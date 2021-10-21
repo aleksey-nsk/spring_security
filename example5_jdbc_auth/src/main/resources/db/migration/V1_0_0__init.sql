@@ -4,11 +4,10 @@ CREATE TABLE my_user
     username  varchar,
     password  varchar,
     position  varchar,
---     role     varchar
     authority varchar
 );
 
--- INSERT INTO my_user(username, password, position, role)
 INSERT INTO my_user(username, password, position, authority)
-VALUES ('user', 'p1', 'Финансовый Советник', 'ROLE_USER'),
-       ('admin', 'p2', 'Начальник Отдела', 'ROLE_ADMIN');
+VALUES ('user1', 'u1', 'Финансовый Советник', 'ROLE_USER'),
+       ('user2', 'u2', 'Оператор Call-центра', 'ROLE_USER'),
+       ('admin', 'a1', 'Начальник Отдела', 'ROLE_ADMIN');
