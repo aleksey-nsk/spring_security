@@ -30,5 +30,6 @@ spring:
 
 # Настройки JWT
 jwt:
-    sessionTime: 120000000
+#    sessionTime: 86400000 # (86400000 мс == 1 сутки)
+    sessionTime: 20000 # (20000 мс == 20 секунд) Для тестирования
     secret: secret_key

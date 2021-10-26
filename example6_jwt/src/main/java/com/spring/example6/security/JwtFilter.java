@@ -16,13 +16,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * <p>Фильтр, проверяющий JWT-токен при каждом запросе</p>
- *
- * <p>После того как JWT-токен выдан, клиент его отправляет при каждом запросе. Надо этот токен
- * при каждом запросе проверять (и извлекать из него имя пользователя). Для этого используем
- * фильтр JwtFilter (он расширяет OncePerRequestFilter)</p>
- */
+// JwtFilter - это фильтр, проверяющий JWT-токен при каждом запросе.
+//
+// После того, как JWT-токен выдан, клиент его отправляет при каждом запросе.
+// И проверять этот токен надо при каждом запросе (и извлекать из него имя пользователя).
+// Для этого используем фильтр JwtFilter (он расширяет OncePerRequestFilter).
 @Component
 @Log4j2
 public class JwtFilter extends OncePerRequestFilter {
@@ -35,10 +33,8 @@ public class JwtFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws ServletException, IOException {
+        log.debug("");
         log.debug("Method doFilterInternal()");
-        log.debug("  request: " + request);
-        log.debug("  response: " + response);
-        log.debug("  chain: " + chain);
 
         final String authorizationHeader = request.getHeader("Authorization");
         log.debug("  authorizationHeader: " + authorizationHeader);

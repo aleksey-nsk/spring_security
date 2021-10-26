@@ -21,13 +21,17 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        log.debug("  Method loadUserByUsername()");
+        log.debug("    username: " + username);
+
         List<MyUser> all = repository.findAll();
-        log.debug("all users in DB: " + all);
+        log.debug("    all users in DB: " + all);
 
         MyUser myUser = repository.findByUsername(username);
-        log.debug("myUser: " + myUser);
+        log.debug("    myUser: " + myUser);
 
         if (myUser == null) {
+            log.error("    Unknown user: " + username);
             throw new UsernameNotFoundException("Unknown user: " + username);
         }
 
@@ -37,6 +41,7 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .roles(myUser.getRole())
                 .build();
 
+        log.debug("    userDetails: " + userDetails);
         return userDetails;
     }
 }

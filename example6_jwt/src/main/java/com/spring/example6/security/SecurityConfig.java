@@ -36,6 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     // Настройка аутентификации
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        log.debug("");
         log.debug("НАСТРОЙКА АУТЕНТИФИКАЦИИ");
         auth.userDetailsService(userDetailsService);
     }
@@ -43,7 +44,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     // Настройка авторизации
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        log.debug("");
         log.debug("НАСТРОЙКА АВТОРИЗАЦИИ");
+        log.debug("");
 
         http.csrf().disable() // отключаем csrf
                 .authorizeRequests()

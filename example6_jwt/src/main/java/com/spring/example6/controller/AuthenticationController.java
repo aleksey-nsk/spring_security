@@ -17,9 +17,15 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-// Тут выдается JWT-токен. Пользователь делает POST-запрос с именем и паролем по адресу /authenticate,
+// В контроллере AuthenticationController выдаётся JWT-токен.
+// Пользователь делает POST-запрос с именем и паролем по адресу /authenticate,
 // а в ответ получает сгенерированынй токен.
-// Токен генерится методом generateToken() из утилитного класса JwtUtil
+//
+// Токен генерится методом generateToken() из утилитного класса JwtUtil.
+//
+// Если имя и пароль верные, токен возвращается в AuthResponse, а если нет — выбрасывается исключение и на
+// фронтенд приходит сообщение об ошибке.
+// Фронтенд сохраняет у себя JWT-токен, и потом использует его при каждом запросе.
 
 @RestController
 @Log4j2
@@ -34,6 +40,7 @@ public class AuthenticationController {
     @PostMapping("/authenticate")
     @ResponseStatus(HttpStatus.OK)
     public AuthResponse createAuthenticationToken(@RequestBody AuthRequest authRequest) {
+        log.debug("");
         log.debug("Method createAuthenticationToken()");
         log.debug("  authRequest: " + authRequest);
 
@@ -50,7 +57,8 @@ public class AuthenticationController {
             log.debug("  authentication: " + authentication);
 
         } catch (BadCredentialsException e) {
-            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Имя или пароль неправильны", e);
+            log.error("  Имя или пароль неправильные");
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Имя или пароль неправильные", e);
         }
 
         // При создании токена в него кладётся username как Subject claim, и список authorities как кастомный claim
@@ -59,10 +67,6 @@ public class AuthenticationController {
 
         AuthResponse authResponse = new AuthResponse(jwt);
         log.debug("  authResponse: " + authResponse);
-
-        // Если имя и пароль верные, токен возвращается в AuthResponse, а если нет — выбрасывается исключение и на
-        // фронтенд приходит сообщение об ошибке.
-        // Фронтенд сохраняет у себя JWT-токен, и потом использует его при каждом запросе.
 
         return authResponse;
     }

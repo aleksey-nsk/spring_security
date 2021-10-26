@@ -2,8 +2,9 @@ package com.spring.example6.security;
 
 import lombok.Data;
 
+// Формат ответа
 @Data
-public class AuthResponse { // формат ответа
+public class AuthResponse {
 
     private String jwtToken;
 
