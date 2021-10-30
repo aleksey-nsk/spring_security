@@ -14,6 +14,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+// Для работы с JWT-токеном используем библиотеку JJWT (Java JWT: JSON Web Token for Java and Android).
+// Во всех методах извлечения данных JWT-токен заодно проверяется на предмет, не истёк ли он, и валидна ли подпись.
+
 @Service
 @Log4j2
 public class JwtUtil {
@@ -51,6 +54,7 @@ public class JwtUtil {
         log.debug("      claims: " + claims);
         log.debug("      subject: " + subject);
 
+        // Генерируем токен с помощью библиотеки JJWT
         String token = Jwts.builder()
                 .setClaims(claims)
                 .setSubject(subject)
@@ -103,6 +107,7 @@ public class JwtUtil {
         log.debug("        token: " + token);
         log.debug("        secretKey: " + secretKey);
 
+        // Используем библиотеку JJWT
         Claims claims = Jwts.parser()
                 .setSigningKey(secretKey)
                 .parseClaimsJws(token)

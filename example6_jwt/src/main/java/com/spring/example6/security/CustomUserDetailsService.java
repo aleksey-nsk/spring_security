@@ -12,6 +12,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+// Аутентификация с пользовательским UserDetailsService.
+//
+// Мы переопределяем метод loadUserByUsername(), чтобы Spring Security понимал,
+// как взять пользователя по его имени из хранилища.
+// Имея этот метод, Spring Security может сравнить переданный пароль с настоящим
+// и аутентифицировать пользователя (либо не аутентифицировать).
+
 @Service
 @Log4j2
 public class CustomUserDetailsService implements UserDetailsService {

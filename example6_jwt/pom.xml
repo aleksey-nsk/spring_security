@@ -59,7 +59,7 @@
             <artifactId>flyway-core</artifactId>
         </dependency>
 
-        <!-- Библиотека для работы с JWT-токеном -->
+        <!-- Для работы с JWT-токеном используем библиотеку JJWT (Java JWT: JSON Web Token for Java and Android) -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>

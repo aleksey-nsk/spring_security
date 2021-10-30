@@ -4,6 +4,9 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+// Это наш основной REST-контроллер.
+// Он нужен для того, чтобы запретить к нему доступ, и потом разрешить только авторизованным пользователям.
+
 @RestController
 @Log4j2
 public class HelloController {
@@ -15,7 +18,7 @@ public class HelloController {
         return "Hello";
     }
 
-    // Сюда доступ разрешен только для USER и ADMIN
+    // Сюда доступ разрешён только для USER и ADMIN
     @GetMapping("/user")
     public String user() {
         log.debug("");
@@ -23,7 +26,7 @@ public class HelloController {
         return "User";
     }
 
-    // Сюда доступ разрешен только для ADMIN
+    // Сюда доступ разрешён только для ADMIN
     @GetMapping("/admin")
     public String admin() {
         log.debug("");

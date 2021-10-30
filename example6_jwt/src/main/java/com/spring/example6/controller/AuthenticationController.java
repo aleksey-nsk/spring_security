@@ -61,7 +61,8 @@ public class AuthenticationController {
             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Имя или пароль неправильные", e);
         }
 
-        // При создании токена в него кладётся username как Subject claim, и список authorities как кастомный claim
+        // При создании токена в него кладётся username (как claim subject),
+        // и список authorities (как claim authorities)
         String jwt = jwtUtil.generateToken((UserDetails) authentication.getPrincipal());
         log.debug("  jwt: " + jwt);
 
