@@ -1,0 +1,35 @@
+# На каком порту стартует приложение
+server:
+    port: 8086
+
+# Настройки логирования
+logging:
+    level:
+        com.spring.example6: debug
+    file:
+        name: example6_jwt/logs/app_debug.log
+
+# Настройки БД
+spring:
+    datasource:
+        driver-class-name: org.h2.Driver
+        url: jdbc:h2:mem:example6;MODE=PostgreSQL
+        username: sa
+        password:
+    jpa:
+        show-sql: false
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.H2Dialect
+    h2:
+        console:
+            enabled: true
+            path: /h2-console # web-консоль
+            settings:
+                web-allow-others: false
+
+# Настройки JWT
+jwt:
+    sessionTime: 86400000 # (86400000 мс == 1 сутки)
+    # sessionTime: 20000 # (20000 мс == 20 секунд) Для тестирования
+    secret: my_secret_key_1234
