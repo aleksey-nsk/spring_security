@@ -1,0 +1,43 @@
+# На каком порту стартует приложение
+server:
+    port: 8087
+
+# Настройки логирования
+logging:
+    level:
+        com.spring.example7: debug
+    file:
+        name: example7_oauth2/logs/app_debug.log
+
+# Настройки БД
+spring:
+    datasource:
+        driver-class-name: org.h2.Driver
+        url: jdbc:h2:mem:example7;MODE=PostgreSQL
+        username: sa
+        password:
+    jpa:
+        show-sql: false
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.H2Dialect
+    h2:
+        console:
+            enabled: true
+            path: /h2-console # web-консоль
+            settings:
+                web-allow-others: false
+
+# Для OAuth2 аутентификации
+security:
+    oauth2:
+        client:
+            client-id: 940785235077-1j6sfd85n1edbug4cs42a0lmqi889ele.apps.googleusercontent.com
+            client-secret: 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
+            access-token-uri: https://www.googleapis.com/oauth2/v4/token
+            user-authorization-uri: https://accounts.google.com/o/oauth2/v2/auth
+            client-authentication-scheme: form
+            scope: openid,email,profile
+        resource:
+            user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
+            prefer-token-info: true
