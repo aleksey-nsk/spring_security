@@ -23,3 +23,6 @@ mvnw.cmd
 
 # Logs
 logs/
+
+# Other
+.attach_pid*

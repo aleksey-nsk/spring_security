@@ -88,4 +88,28 @@ exp — когда истекает токен;
 iat — когда выпущен токен:
 ![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex6_03_jwt_decoded.png)  
 
+### Модуль example7_oauth2
+- Пример OAuth2 авторизации.
+- Для OAuth2 аутентификации используем дополнительную зависимость `spring-security-oauth2-autoconfigure`.
+- Для настройки переходим по адресу https://console.cloud.google.com и открываю APIs & Services:  
+![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex7_01_open_google.png)  
+Далее создаём проект:
+![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex7_02_create_project.png)  
+Редактируем информацию о приложении:  
+![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex7_03_app_information.png)  
+Создаём учётные данные:  
+![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex7_04_create_oauth_client_id.png)  
+Указываем необходимые параметры:  
+![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex7_05_type_name_uris.png)  
+Полученные в итоге Client ID и Client Secret вставляем в файл application.yaml:  
+![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex7_06_oauth_client_created.png)  
+Далее запускаем приложение и открываем страницу http://localhost:8087 (сюда есть доступ у неавторизованных юзеров):  
+![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex7_07_root.png)  
+Далее пытаемся открыть http://localhost:8087/user и попадаем на Гугловую форму аутентификации:  
+![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex7_08_user.png)  
+После аутентификации попадаем на нужный адрес:  
+![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex7_09_user_ok.png)  
+При этом в консоли видим, что от Google пришли параметры юзера: id, username, userpic, email, gender, locale:  
+![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex7_10_user_info_log.png)  
+
 ### Модуль

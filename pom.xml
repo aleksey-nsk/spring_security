@@ -17,6 +17,7 @@
         <module>example4_custom_authentication_provider</module>
         <module>example5_jdbc_auth</module>
         <module>example6_jwt</module>
+        <module>example7_oauth2</module>
     </modules>
 
 </project>
