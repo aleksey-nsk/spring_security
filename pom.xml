@@ -18,6 +18,7 @@
         <module>example5_jdbc_auth</module>
         <module>example6_jwt</module>
         <module>example7_oauth2</module>
+        <module>example8_angularjs</module>
     </modules>
 
 </project>
