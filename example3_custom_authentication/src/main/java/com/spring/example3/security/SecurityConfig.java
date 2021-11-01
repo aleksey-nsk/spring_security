@@ -1,6 +1,5 @@
-package com.spring.example3.config;
+package com.spring.example3.security;
 
-import com.spring.example3.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;

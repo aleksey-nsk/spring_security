@@ -1,4 +1,4 @@
-package com.spring.example3.service;
+package com.spring.example3.security;
 
 import com.spring.example3.model.MyUser;
 import com.spring.example3.repository.MyUserRepository;
