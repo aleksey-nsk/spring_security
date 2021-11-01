@@ -112,4 +112,13 @@ iat — когда выпущен токен:
 При этом в консоли видим, что от Google пришли параметры юзера: id, username, userpic, email, gender, locale:  
 ![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex7_10_user_info_log.png)  
 
-### Модуль
+### Модуль example8_angularjs
+- Используем Spring Boot + AngularJS
+- Чтобы CSRF работала с AngularJS необходима настройка `.and().csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())`
+- Для преобразования паролей по алгоритму bcrypt используем сайт https://www.browserling.com/tools/bcrypt
+- Запускаем приложение. При попытке открыть localhost:8088 попадаем на страницу логина localhost:8088/login  
+![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex8_01_login_page.png)  
+Вводим логин/пароль и попадаем на страницу localhost:8088    
+![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex8_02_main_page.png)  
+При нажатии на ссылку "Выйти" попадаем на страницу:  
+![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex8_03_logout.png) 
