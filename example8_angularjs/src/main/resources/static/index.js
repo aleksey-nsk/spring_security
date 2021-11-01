@@ -35,15 +35,6 @@ angular.module('app', []).controller('indexController', function ($scope, $http)
         });
     };
 
-    $scope.showCart = function () {
-        $http({
-            url: contextPath + '/cart',
-            method: 'GET'
-        }).then(function (response) {
-            $scope.Cart = response.data;
-        });
-    };
-
     $scope.generatePagesIndexes = function (startPage, endPage) {
         let arr = [];
         for (let i = startPage; i < endPage + 1; i++) {
@@ -52,39 +43,6 @@ angular.module('app', []).controller('indexController', function ($scope, $http)
         return arr;
     };
 
-    $scope.submitCreateNewProduct = function () {
-        $http.post(contextPath + '/products', $scope.newProduct)
-                .then(function (response) {
-                    $scope.newProduct = null;
-                    $scope.fillTable();
-                });
-    };
-
-    $scope.deleteProductById = function (productId) {
-        $http.delete(contextPath + '/products/', productId)
-                .then(function (response) {
-                    $scope.fillTable();
-                });
-    };
-
-    $scope.addToCart = function (productId) {
-        console.log(productId);
-        const url = contextPath + '/cart?productId=' + productId;
-        console.log(url);
-        $http.put(url)
-                .then(function (response) {
-                    $scope.showCart();
-                });
-    };
-
-    $scope.clearCart = function () {
-        $http.delete(contextPath + '/cart')
-                .then(function (response) {
-                    $scope.showCart();
-                });
-    };
-
     $scope.fillTable();
-    $scope.showCart();
 
 });
