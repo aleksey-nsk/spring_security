@@ -121,3 +121,4 @@ loadUserByUsername(). По-сути тут всего лишь реализов�
 ![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex8_02_main_page.png)  
 При нажатии на ссылку "**Выйти**" попадаем на страницу:    
 ![](https://github.com/aleksey-nsk/spring_security/blob/master/screenshots/ex8_03_logout.png) 
+
